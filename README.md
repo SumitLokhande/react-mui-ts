@@ -44,3 +44,55 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## Installed
+
+**Material UI**
+npm install @mui/material @emotion/react @emotion/styled
+
+**React router dom**
+npm i react-router-dom
+
+**Zod**
+npm i zod
+
+**Hookform/Resolvers**
+npm i @hookform/resolvers
+
+**Redux**
+npm i redux
+
+**Redux Toolkit**
+npm install @reduxjs/toolkit
+
+**Axios**
+npm i axios
+
+**Eslint**
+npm install eslint --save-dev
+
+**Prettier**
+npm install --save-dev --save-exact prettier
+
+## Folder Structure
+
+Folder names are all Smallcase - common, redux, etc.
+Component containing folder names are all Camelcase - Header, Footer
+Component File names are all Camelcase - Header.tsx, Dashboard.tsx
+Util File names are all smallcase - constants.ts, routes types.ts
+
+**components**
+
+**pages**
+
+**routes**
+
+**redux**
+
+**types**
+
+**layouts**
+
+**auth**
+
+**api**
