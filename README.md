@@ -48,31 +48,40 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 ## Installed
 
 **Material UI**
-npm install @mui/material @emotion/react @emotion/styled
+
+- npm install @mui/material @emotion/react @emotion/styled
 
 **React router dom**
-npm i react-router-dom
+
+- npm i react-router-dom
 
 **Zod**
-npm i zod
+
+- npm i zod
 
 **Hookform/Resolvers**
-npm i @hookform/resolvers
+
+- npm i @hookform/resolvers
 
 **Redux**
-npm i redux
+
+- npm i redux
 
 **Redux Toolkit**
-npm install @reduxjs/toolkit
+
+- npm install @reduxjs/toolkit
 
 **Axios**
-npm i axios
+
+- npm i axios
 
 **Eslint**
-npm install eslint --save-dev
+
+- npm install eslint --save-dev
 
 **Prettier**
-npm install --save-dev --save-exact prettier
+
+- npm install --save-dev --save-exact prettier
 
 ## Folder Structure
 
