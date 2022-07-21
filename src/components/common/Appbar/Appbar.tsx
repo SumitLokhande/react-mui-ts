@@ -16,6 +16,8 @@ import AdbIcon from '@mui/icons-material/Adb';
 import MenuIcon from '@mui/icons-material/Menu';    
 import i18n from 'i18next';
 import { useTranslation } from 'react-i18next';
+import * as ROUTES from '../../../constant/routes'
+import { useNavigate } from "react-router-dom";
 
 const pages = ['Products', 'Pricing', 'Blog'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -23,7 +25,7 @@ const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 const Appbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
-
+  const navigate = useNavigate()
   const { t } = useTranslation();
 
   const onChange = (event: any) => { 
@@ -48,6 +50,10 @@ const Appbar = () => {
     setAnchorElUser(null);
   };
 
+  const navigateTo = (url:string) =>{
+    navigate(url)
+  }
+
   return (
     <div>
       <AppBar position="static">
@@ -58,7 +64,7 @@ const Appbar = () => {
               variant="h6"
               noWrap
               component="a"
-              href="/"
+              onClick={()=>navigateTo(ROUTES.HOME)}
               sx={{
                 mr: 2,
                 display: { xs: 'none', md: 'flex' },
@@ -70,6 +76,22 @@ const Appbar = () => {
               }}>
                 {t('welcome')}
               {/* LOGO */}
+            </Typography>
+            <Typography
+              variant="h6"
+              noWrap
+              component="a"
+              onClick={()=>navigateTo(ROUTES.ABOUT)}
+              sx={{
+                mr: 2,
+                display: { xs: 'none', md: 'flex' },
+                fontFamily: 'monospace',
+                fontWeight: 700,
+                letterSpacing: '.3rem',
+                color: 'inherit',
+                textDecoration: 'none'
+              }}>
+              About
             </Typography>
 
             <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -99,11 +121,17 @@ const Appbar = () => {
                 sx={{
                   display: { xs: 'block', md: 'none' }
                 }}>
-                {pages.map((page) => (
+                  {pages.map((page) => (
                   <MenuItem key={page} onClick={handleCloseNavMenu}>
                     <Typography textAlign="center">{page}</Typography>
                   </MenuItem>
                 ))}
+                   {/* <MenuItem onClick={navigateTo(ROUTES.HOME)}>
+                    <Typography textAlign="center">Home</Typography>
+                  </MenuItem>
+                  <MenuItem onClick={navigateTo(ROUTES.ABOUT)}>
+                    <Typography textAlign="center">About</Typography>
+                  </MenuItem> */}
               </Menu>
             </Box>
             <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
@@ -125,14 +153,14 @@ const Appbar = () => {
               LOGO
             </Typography>
             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-              {pages.map((page) => (
+              {/* {pages.map((page) => (
                 <Button
                   key={page}
                   onClick={handleCloseNavMenu}
                   sx={{ my: 2, color: 'white', display: 'block' }}>
                   {page}
                 </Button>
-              ))}
+              ))} */}
             </Box>
                 <Box>
                 <select name="language" onChange={onChange}>
