@@ -3,6 +3,7 @@ import './App.css';
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import Routes from './routes';
+import { CustomThemeProvider } from './providers/ThemeProvider';
 
 const translateEn = { welcome: 'Welcome' };
 const translateFr = { welcome: 'Bienvenue' };
@@ -29,11 +30,12 @@ i18n
   });
 
 function App() {
-  
   return (
+    <CustomThemeProvider>
     <Suspense fallback="Loading...">
       <Routes />
     </Suspense>
+    </CustomThemeProvider>
   );
 }
 

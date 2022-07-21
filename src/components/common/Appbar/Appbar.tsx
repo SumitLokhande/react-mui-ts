@@ -18,6 +18,9 @@ import i18n from 'i18next';
 import { useTranslation } from 'react-i18next';
 import * as ROUTES from '../../../constant/routes'
 import { useNavigate } from "react-router-dom";
+import { useCustomTheme } from '../../../providers/ThemeProvider';
+import Brightness4Icon from '@mui/icons-material/Brightness4';
+import Brightness7Icon from '@mui/icons-material/Brightness7';
 
 const pages = ['Products', 'Pricing', 'Blog'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -27,7 +30,7 @@ const Appbar = () => {
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
   const navigate = useNavigate()
   const { t } = useTranslation();
-
+  const themeHandler = useCustomTheme();
   const onChange = (event: any) => { 
     console.log(event.target.value, 'value');
     console.log(t, 't');
@@ -135,6 +138,9 @@ const Appbar = () => {
               </Menu>
             </Box>
             <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+            <IconButton sx={{ ml: 1 }} onClick={themeHandler.colorMode.toggleColorMode} color="inherit">
+        {themeHandler.theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
+      </IconButton>
             <Typography
               variant="h5"
               noWrap
