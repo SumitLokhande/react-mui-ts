@@ -75,6 +75,10 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 - npm i axios
 
+**Axios Hooks**
+
+- npm i axios-hooks
+
 **Eslint**
 
 - npm install eslint --save-dev
